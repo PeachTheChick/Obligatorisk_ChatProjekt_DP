@@ -1,0 +1,193 @@
+:root {
+    --primary-bg-color: #fdfdfd;
+    --secondary-bg-color: #efefef;
+    --primary-color: #151515;
+    --secondary-color: #76757c;
+    --box-shadow-color: #dbdbdb;
+    --input-bg-color: #fafafa;
+    --blue: #2563eb;
+    --dark-blue: #1d4ed8;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-color);
+    font-family: var(--bs-font-sans-serif), sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 5rem 0 8rem 0;
+    max-width: 1200px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 3fr 7fr;
+    grid-template-areas:
+    "nav nav"
+    "left main";
+    gap: 1.5rem;
+    height: 80vh;
+}
+
+#nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    align-items: center;
+    border-radius: 1em;
+    padding: 0 1em;
+}
+
+#left-panel {
+    grid-area: left;
+    background-color: var(--primary-bg-color);
+    border-radius: 1em;
+    box-shadow: var(--box-shadow-color) 0px 48px 100px 0px;
+    justify-content: center;
+    align-content: start;
+    padding: 0 1em;
+}
+
+#main-content {
+    grid-area: main;
+    background-color: var(--primary-bg-color);
+    border-radius: 1em;
+    box-shadow: var(--box-shadow-color) 0px 48px 100px 0px;
+    justify-content: center;
+    align-content: center;
+    padding: 0 1em;
+}
+
+#nav-list {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-list li {
+    float: left;
+}
+
+#nav-list li a {
+    display: block;
+    color: var(--secondary-color);
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+#nav-list li a:hover {
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#auth-container {
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    width: 400px;
+    text-align: center;
+}
+
+#toggle-link {
+    display: block;
+    text-align: end;
+    font-size: 14px;
+}
+
+#auth-container form input {
+    display: block;
+}
+
+.input-lbl {
+    display: block;
+    margin: 0.75rem 0 0.5rem 0;
+    text-align: start;
+}
+
+.input-group {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 4px;
+
+}
+
+.input-addon {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
+    justify-content: center;
+    text-overflow: ellipsis;
+    flex: 0 0 20px;
+    background: var(--input-bg-color);
+    font-size: 18px;
+}
+
+.input-field {
+    flex: 1;
+    border: none !important;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    width: 100%;
+    background: var(--input-bg-color);
+}
+
+.input-field:focus {
+    /*background: var(--secondary-bg-color);*/
+}
+
+.input-group:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 2px #2563EB40, 0 0 0 3px #73a1f440;
+}
+
+.input-btn {
+    border: none;
+    padding: 0.75rem;
+    background: var(--blue);
+    color: var(--primary-bg-color);
+    border-radius: 4px;
+    margin: 1rem 0 0 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.input-btn:hover {
+    background-color: var(--dark-blue);
+    box-shadow: 0 4px 6px #2563EB40;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-blue);
+}
+
+#messages-container {
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}

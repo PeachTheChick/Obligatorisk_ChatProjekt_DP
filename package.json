@@ -1,0 +1,18 @@
+{
+  "name": "obligatorisk_chatprojekt_dp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "archive/oldapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pug": "^3.0.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

@@ -1,0 +1,21 @@
+html
+    include includes/head
+    body
+        div.container
+            include includes/nav
+            div#left-panel
+                //- If admin at users page, show users list.
+                //- If regular user at profile page, OR at chats page, show chats list.
+                if page === 'users' && user.userLevel === 3
+                    include includes/users
+                else
+                    include includes/chats
+            div#main-content
+                if page === 'users'
+                    include includes/profile
+                else
+                    if user && user.isValidUser
+                        include includes/messages
+                    else
+                        include includes/login
+        div

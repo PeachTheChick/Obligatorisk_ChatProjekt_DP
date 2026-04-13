@@ -1,0 +1,15 @@
+h2 Users
+if users && users.length > 0
+    ul
+        each u in users
+            li
+                if u.profilePic
+                    a(href="/users/" + u.id)
+                        img(src=u.profilePic alt=u.username width="30")
+                        span #{u.username}
+                else
+                    a(href="/users/" + u.id)
+                        span #{u.username}
+else
+    p
+        strong No users found.

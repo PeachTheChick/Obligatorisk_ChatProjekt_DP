@@ -1,0 +1,37 @@
+div#messages-container
+    if selectedChat
+        h2 #{selectedChat.chatName}
+        p #{selectedChat.chatDescription}
+
+        if isParticipant
+            div#participants
+                if users && users.length > 0
+                    ul
+                        each profile in users
+                            li
+                                if profile.profilePic
+                                    img(src=profile.profilePic alt=profile.username width="30")
+                                span #{profile.username}
+                else
+                    p No participants in this chat.
+            div#messages
+                ul#messages-list
+                    if selectedChat.chatMessages && selectedChat.chatMessages.length > 0
+                        each msg in selectedChat.chatMessages
+                            li
+                                strong #{msg.senderName || 'User ' + msg.messageSenderID}:
+                                span #{msg.messageContent}
+                                em  (#{new Date(msg.messageTime).toLocaleString()})
+                    else
+                        li No messages yet.
+            div#message-form
+                form(action="/chats/" + selectedChat.chatId + "/messages" method="POST")
+                    input(type="text" name="messageContent" placeholder="Write a message..." required)
+                    button(type="submit") Send
+        else
+            p
+                em You must be a participant to see messages and participate in this chat.
+    else
+        p
+            strong No chat selected
+        p Select a chat to view details.

@@ -1,0 +1,18 @@
+div#nav
+    div#home
+        a(href="/")
+            img(src="")
+        if user && user.isValidUser
+            h1#homepage-header Welcome! #{user.username}
+        else
+            h1#homepage-header Web page Name
+    div#user-options
+        if user && user.isValidUser
+            ul#nav-list
+                if user.userLevel == 3
+                    li
+                        a(href="/users") Users
+                    li
+                        a(href="/chats") Chats
+                li
+                     a#logout(href="/users/logout") Log out

@@ -1,0 +1,16 @@
+if selectedUser
+    h2 User Profile: #{selectedUser.username}
+    div#profile-info
+        if selectedUser.profilePic
+            img(src=selectedUser.profilePic alt=selectedUser.username width="100")
+        p
+            strong User ID:
+            |  #{selectedUser.id}
+        p
+            strong Username:
+            |  #{selectedUser.username}
+        p
+            strong User Level:
+            |  #{selectedUser.userLevel}
+else
+    p Select a user from the list to view their profile.
