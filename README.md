@@ -35,7 +35,7 @@ res.status(403).render("403")
 chatRouter.post("/newchat", (req, res) => {
 if (!req.session.isValidUser) return res.status(403).render("403")
 
-    const {chatName} = req.body
+const {chatName} = req.body 
     if (chatName) {
         const newChat = ChatController.addChat(chatName, req.session.userId)
         res.redirect(`/?chatId=${newChat.chatId}`)
@@ -48,8 +48,8 @@ if (!req.session.isValidUser) return res.status(403).render("403")
 // Post message route
 chatRouter.post("/message/:id", (req, res) => {
 if (!req.session.isValidUser) return res.status(403).render("403")
-
-    const {messageContent} = req.body
+ 
+const {messageContent} = req.body
     if (messageContent) {
         ChatController.writeMessage(req.params.id, req.session.userId, messageContent)
         res.redirect(`/?chatId=${req.params.id}`)
