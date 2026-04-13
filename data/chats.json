@@ -1,0 +1,34 @@
+[
+  {
+    "chatName": "TestChat",
+    "chatOwner": 1,
+    "chatDescription": "Welcome to the test chat!",
+    "chatPicture": "",
+    "chatUsers": [
+      1
+    ],
+    "chatMessages": [
+      {
+        "messageSenderID": 1,
+        "messageContent": "This is a test message",
+        "messageTime": 1776071231726,
+        "messageId": 1,
+        "senderName": "Admin"
+      },
+      {
+        "messageSenderID": 1,
+        "messageContent": "This is another test message.",
+        "messageTime": 1776071254197,
+        "messageId": 2,
+        "senderName": "Admin"
+      },
+      {
+        "messageSenderID": 1,
+        "messageContent": "Testing again",
+        "messageTime": 1776073185537,
+        "messageId": 3
+      }
+    ],
+    "chatId": 1
+  }
+]
