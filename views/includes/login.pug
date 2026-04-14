@@ -3,11 +3,11 @@ div#auth-container
     form#auth-form(action="/users/login", method="post")
         label.input-lbl(for="username") Username
         div.input-group
-            i.input-addon @
+            i.input-addon.bi.bi-person
             input.input-field(type="text", name="userName", id="username", placeholder="Username" required)
         label.input-lbl(for="password") Password
         div.input-group
-            i.input-addon #
+            i.input-addon.bi.bi-key
             input.input-field(type="password", name="userPass", id="password", placeholder="Password" required)
         button.input-btn(type="submit", id="submit-btn") Login
     a#toggle-link(href='#') No profile? Register here.
