@@ -20,7 +20,7 @@ Below are methods and routes:
 
 ```javascript
 // Join chat route
-chatRouter.get("/join/:id", (req, res) => {
+chatRouter.get("chats/join/:id", (req, res) => {
     if (req.session.isValidUser) {
         ChatController.addUserToChat(req.params.id, req.session.userId)
         res.redirect(`/?chatId=${req.params.id}`)
@@ -34,7 +34,7 @@ chatRouter.get("/join/:id", (req, res) => {
 ```
 ```javascript
 // Delete chat route
-chatRouter.delete("/delete/:id", (req, res) => {
+chatRouter.delete("chats/delete/:id", (req, res) => {
     if (!req.session.isValidUser) return res.status(403).render("403")
 
     const chat = ChatController.getChatById(req.params.id)
@@ -55,7 +55,7 @@ chatRouter.delete("/delete/:id", (req, res) => {
 
 ```javascript
 // Create new chat route
-chatRouter.post("/newchat", (req, res) => {
+chatRouter.post("chats/new", (req, res) => {
     if (!req.session.isValidUser) return res.status(403).render("403")
 
     const {chatName} = req.body
@@ -70,7 +70,7 @@ chatRouter.post("/newchat", (req, res) => {
 
 ```javascript
 // Post message route
-chatRouter.post("/message/:id", (req, res) => {
+chatRouter.post("chats/messages/:id/", (req, res) => {
     if (!req.session.isValidUser) return res.status(403).render("403")
 
     const {messageContent} = req.body
